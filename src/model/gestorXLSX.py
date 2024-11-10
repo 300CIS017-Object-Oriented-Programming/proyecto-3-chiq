@@ -1,6 +1,6 @@
 from model.gestor import Gestor
 
-class gestorJSON(Gestor):
+class GestorXLSX(Gestor):
     def __init__(self):
         pass
 
