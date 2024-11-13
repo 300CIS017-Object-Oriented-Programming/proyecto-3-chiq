@@ -1,6 +1,6 @@
 from model.gestor import Gestor
 
-class Gestor_CSV(Gestor):
+class GestorCSV(Gestor):
     def __init__(self):
         pass
 
