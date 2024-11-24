@@ -68,6 +68,14 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
+# Fichero de paquetes de python para ignorar (datos en cache)
+
+__pycache__/
+
+# Archivo de pruebas testing.py sera ignorado porque es para mirar si funciona cada clase interna y cumple su funcion
+
+src/model/testing.py
+
 
 # more files to ignore
 
