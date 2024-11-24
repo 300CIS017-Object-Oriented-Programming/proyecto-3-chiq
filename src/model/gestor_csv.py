@@ -1,9 +1,7 @@
-from git.cmd import dashify
-from setuptools.unicode_utils import try_encode
 
 from model.gestor import Gestor
 import pandas as pd
-import re
+
 
 class GestorCSV(Gestor):
     def __init__(self):
@@ -42,7 +40,7 @@ class GestorCSV(Gestor):
             return codigos_snies_return
 
     @staticmethod
-    def leer_etiquetas(self, path_base):
+    def leer_etiquetas(path_base):
         try:
             data_read = pd.read_csv(path_base, sep=';')
 
@@ -60,10 +58,11 @@ class GestorCSV(Gestor):
 
 
     def read_file(self, path_base, anio, codigos_snies):
-        path = path_base + anio + ".csv"
-        data_read = pd.read_csv(path, sep=';')
+        #path = path_base + anio + ".csv"
+        data_read = pd.read_csv(path_base, skiprows = 1, sep=';', header = None)
         return data_read
 
     def update_file(self, path, content):
         pass
+
 
