@@ -11,6 +11,11 @@ st.markdown("<h1 style='text-align: center;'>SNIES DATA BASE</h1>", unsafe_allow
 st.header("Bienvenido al SNIES data manager & analisis")
 
 
+
+# Para temas de pruebas esta la parte de abajo: es para ensayar el GestorCsv
+
+'''
+
 # Instancia de la clase GestorCsv
 gestor = GestorCSV()
 
@@ -29,3 +34,4 @@ if uploaded_file is not None:
     st.write("Vista previa del archivo subido:")
     st.write(df)
 
+'''

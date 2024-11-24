@@ -1,5 +1,11 @@
 from abc import ABC, abstractmethod
 
+# Para darle un formato al diccionario de programas academicos
+
+from typing import Dict
+
+from programa_academico import ProgramaAcademico
+
 
 class Gestor(ABC):
 
@@ -14,8 +20,10 @@ class Gestor(ABC):
         def leer_programas(self, path):
             pass
 
+
+        # Tener en cuenta que para el siguiente metodo content es el data frame que vamos a usar para obtener las etiquetas
         @abstractmethod
-        def create_file(self, path, content):
+        def create_file(self, path, content, programas_academicos : Dict[int, ProgramaAcademico()], ano1, ano2):
             pass
 
         @abstractmethod

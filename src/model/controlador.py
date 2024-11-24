@@ -1,7 +1,30 @@
 from model.gestor import Gestor
-from model.gestorJSON import GestorJSON
+from model.gestor_json import GestorJSON
 from model.gestor_csv import GestorCSV
-from model.gestorXLSX import GestorXLSX
+from model.gestor_xlsx import GestorXLSX
+
+
+
+'''
+Consideraciones con adherencia de streamlit al proyecto respecto a los archivos subidos en memoria 
+
+Se puede tomar dos caminos, tomar los datos de manera temporal con la memoria de streamlit
+mientras que la página es ejecutada
+
+sol con memoria temporal: Para cada archivo subido, lee el archivo en un DataFrame y almacena el DataFrame en el diccionario usando el nombre del archivo como clave.
+
+archivos_procesados[uploaded_file.name] = df: Almacena el DataFrame en el diccionario.Para cada archivo subido, lee el archivo en un DataFrame y almacena el DataFrame en el diccionario usando el nombre del archivo como clave.
+
+archivos_procesados[uploaded_file.name] = df: Almacena el DataFrame en el diccionario.
+
+Ó
+
+Se pueden descargar los archivos y utilizaros de manera local en el codigo fuente
+
+
+Esto esta sujeto a elección como sea más conveniente
+
+'''
 
 class SNIESController:
     def __init__(self):
@@ -10,7 +33,7 @@ class SNIESController:
         gestor_json = GestorJSON()
         self.gestores: list[Gestor] = [gestor_csv, gestor_xlsx, gestor_json]
         self.programas_academicos = {}  # Inicializar el diccionario de programas académicos
-
+    '''
     def procesar_tipo_output(self, opcion, ruta_output, programas_academicos, etiquetas_columnas, ano_inicio, ano_fin):
         archivo_creado = False
         try:
@@ -29,6 +52,7 @@ class SNIESController:
                 raise ValueError("Opción inválida. Debe ingresar un valor entre 1 y 4.")
         except Exception as e:
             print(f"Error: {e}")
-
-        return archivo_creado
-
+        else:
+            return archivo_creado
+        '''
+    # def procesar_datos_csv(self, anio1, anio2, ):

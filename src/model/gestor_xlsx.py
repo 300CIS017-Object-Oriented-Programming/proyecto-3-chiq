@@ -10,5 +10,8 @@ class GestorXLSX(Gestor):
     def read_file(self, path):
         pass
 
+    def leer_programas(self, path):
+        pass
+
     def update_file(self, path, content):
         pass
