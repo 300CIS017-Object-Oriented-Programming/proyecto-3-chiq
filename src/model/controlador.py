@@ -2,7 +2,8 @@ from model.gestor import Gestor
 from model.gestor_json import GestorJSON
 from model.gestor_csv import GestorCSV
 from model.gestor_xlsx import GestorXLSX
-
+from model.programa_academico import ProgramaAcademico
+from settings import ruta1, ruta4, ruta7, ruta10, ruta13, ruta16
 
 
 '''
@@ -32,7 +33,7 @@ class SNIESController:
         gestor_xlsx = GestorXLSX()
         gestor_json = GestorJSON()
         self.gestores: list[Gestor] = [gestor_csv, gestor_xlsx, gestor_json]
-        self.programas_academicos = {}  # Inicializar el diccionario de programas académicos
+        self.programas_academicos: dict[int, ProgramaAcademico()]  # Inicializar el diccionario de programas académicos
     '''
     def procesar_tipo_output(self, opcion, ruta_output, programas_academicos, etiquetas_columnas, ano_inicio, ano_fin):
         archivo_creado = False
@@ -55,4 +56,15 @@ class SNIESController:
         else:
             return archivo_creado
         '''
-    # def procesar_datos_csv(self, anio1, anio2, ):
+
+    @staticmethod
+    def procesar_datos_csv(self, anio_actual, anio_siguiente, opcion_output, ano_inicio, ano_fin):
+        ruta_programas = ruta16 + ".xlsx"
+        ruta_admitidos = ruta1 + str(anio_actual) + ".xlsx"
+        ruta_graduados = ruta4 + str(anio_actual) + ".xlsx"
+        ruta_inscritos = ruta7 + str(anio_actual) + ".xlsx"
+        ruta_matriculados = ruta10 + str(anio_actual) + ".xlsx"
+        ruta_matriculados_primer_semestre = ruta13 + str(anio_actual) + ".xlsx"
+        codigos_snies = self.gestor_xlsx.leer_programas(ruta_programas)
+
+
