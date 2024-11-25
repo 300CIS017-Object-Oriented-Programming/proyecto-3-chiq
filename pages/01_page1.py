@@ -5,7 +5,7 @@ import streamlit as st
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from model.gestor_csv import GestorCSV
+
 st.markdown("<h1 style='text-align: center;'>SNIES DATA BASE</h1>", unsafe_allow_html=True)
 #st.title("SNIES DATA BASE", )
 st.header("Bienvenido al SNIES data manager & analisis")
