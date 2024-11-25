@@ -1,0 +1,6 @@
+Info of several methods used:
+
+La función .iterrows() en pandas es muy útil cuando necesitas iterar sobre las filas de un DataFrame. 
+Esta función devuelve un iterador que produce pares de índice y serie para cada fila. Sin embargo, 
+es importante notar que iterar sobre filas en pandas no es la operación más eficiente en términos de
+rendimiento, y siempre que sea posible, es preferible usar operaciones vectorizadas.
