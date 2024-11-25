@@ -47,8 +47,14 @@ class ProgramaAcademico{
         municipioDeOfertaDelPrograma(str)
 }
 
-class Huesped{
-  
+
+  class SNIESController{
+    def __init__(self)
+        gestor_csv = GestorCSV()
+        gestor_xlsx = GestorXLSX()
+        gestor_json = GestorJSON()
+        self.gestores: list[Gestor] = [gestor_csv, gestor_xlsx, gestor_json]
+        self.programas_academicos: dict[int, ProgramaAcademico()]
 }
 
 class Propietario{
